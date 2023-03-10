@@ -1,10 +1,10 @@
-﻿using SocialNetwork.BLL.Exceptions;
+﻿using System;
+using System.Linq;
+using SocialNetwork.BLL.Exceptions;
 using SocialNetwork.BLL.Models;
 using SocialNetwork.BLL.Services;
 using SocialNetwork.PLL;
 using SocialNetwork.PLL.Views;
-using System;
-using System.Linq;
 
 namespace SocialNetwork
 {
@@ -12,6 +12,7 @@ namespace SocialNetwork
     {
         static MessageService messageService;
         static UserService userService;
+        static FriendingService friendingService;
         public static MainView mainView;
         public static RegistrationView registrationView;
         public static AuthenticationView authenticationView;
@@ -21,11 +22,13 @@ namespace SocialNetwork
         public static MessageSendingView messageSendingView;
         public static UserIncomingMessageView userIncomingMessageView;
         public static UserOutcomingMessageView userOutcomingMessageView;
+        public static FriendingView userFriendingView;
 
         static void Main(string[] args)
         {
             userService = new UserService();
             messageService = new MessageService();
+            friendingService = new FriendingService();
 
             mainView = new MainView();
             registrationView = new RegistrationView(userService);
@@ -36,6 +39,7 @@ namespace SocialNetwork
             messageSendingView = new MessageSendingView(messageService, userService);
             userIncomingMessageView = new UserIncomingMessageView();
             userOutcomingMessageView = new UserOutcomingMessageView();
+            userFriendingView = new FriendingView(friendingService, userService);
 
             while (true)
             {

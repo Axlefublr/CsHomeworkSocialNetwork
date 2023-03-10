@@ -1,9 +1,9 @@
-using SocialNetwork.BLL.Models;
-using SocialNetwork.BLL.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SocialNetwork.BLL.Models;
+using SocialNetwork.BLL.Services;
 
 namespace SocialNetwork.PLL.Views;
 
@@ -17,7 +17,7 @@ public class UserMenuView
 
     public void Show(User user)
     {
-        while(true)
+        while (true)
         {
             Console.WriteLine("Входящие сообщения: {0}", user.IncomingMessages.Count());
             Console.WriteLine("Исходящие сообщения: {0}", user.OutgoingMessages.Count());
@@ -28,11 +28,12 @@ public class UserMenuView
             Console.WriteLine("Написать сообщение (нажмите 4)");
             Console.WriteLine("Просмотреть входящие сообщения (нажмите 5)");
             Console.WriteLine("Просмотреть исходящие сообщения (нажмите 6)");
-            Console.WriteLine("Выйти из профиля (нажмите 7)");
+            Console.WriteLine("Добавить в друзья (нажмите 7)");
+            Console.WriteLine("Выйти из профиля (нажмите 8)");
 
             string keyValue = Console.ReadLine();
 
-            if (keyValue == "7") break;
+            if (keyValue == "8") break;
 
             switch (keyValue)
             {
@@ -65,8 +66,13 @@ public class UserMenuView
                         Program.userOutcomingMessageView.Show(user.OutgoingMessages);
                         break;
                     }
+                case "7":
+                    {
+                        Program.userFriendingView.Show();
+                        break;
+                    }
             }
         }
-        
+
     }
 }
