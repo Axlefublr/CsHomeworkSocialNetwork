@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using SocialNetwork.BLL.Models;
-
 namespace SocialNetwork.PLL.Views;
 
 public class MainView

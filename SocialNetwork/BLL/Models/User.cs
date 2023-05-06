@@ -21,13 +21,13 @@ public class User
         string favoriteMovie,
         string favoriteBook
     ) {
-        this.Id = id;
-        this.FirstName = firstName;
-        this.LastName = lastName;
-        this.Password = password;
-        this.Email = email;
-        this.Photo = photo;
-        this.FavoriteMovie = favoriteMovie;
-        this.FavoriteBook = favoriteBook;
+        Id = id;
+        FirstName = firstName;
+        LastName = lastName;
+        Password = password;
+        Email = email;
+        Photo = photo;
+        FavoriteMovie = favoriteMovie;
+        FavoriteBook = favoriteBook;
     }
 }
